@@ -6,11 +6,11 @@ import Meetings from '/imports/api/meetings';
 import Users from '/imports/api/users';
 import Auth from '/imports/ui/services/auth';
 import getFromUserSettings from '/imports/ui/services/users-settings';
+import { split } from 'lodash';
 import userListService from '../user-list/service';
 import Service from './service';
 import NavBar from './component';
-import { split } from 'lodash';
-import Poster from '../poster/component'
+import Poster from '../poster/component';
 
 const PUBLIC_CONFIG = Meteor.settings.public;
 const ROLE_MODERATOR = PUBLIC_CONFIG.user.role_moderator;
@@ -56,9 +56,9 @@ export default withTracker(() => {
   const amIModerator = currentUser.role === ROLE_MODERATOR;
   const hasUnreadMessages = checkUnreadMessages();
 
-  const presentationTitleWithoutUID = meetingTitle.split("|")[0];
-  const posterUID = meetingTitle.split("|scigentech|")[meetingTitle.split("|scigentech|").length - 1] || "epodemo2019.0020002";
-  console.log("NavBar posterUID:", posterUID);
+  const presentationTitleWithoutUID = meetingTitle.split('|')[0];
+  const posterUID = meetingTitle.split('|scigentech|')[meetingTitle.split('|scigentech|').length - 1] || 'epodemo2019.0020002';
+  console.log('NavBar posterUID:', posterUID);
 
 
   return {

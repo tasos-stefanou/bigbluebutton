@@ -81,10 +81,10 @@ export default function addSlide(meetingId, podId, presentationId, slide) {
   };
 
   const imageUri = slide.svgUri || slide.pngUri;
-  counter=0;
-  counter ++;
-  console.log("Hey Tasos the meetingId:", meetingId);
-  console.log("Hey Tasos number of times:", counter)
+  counter = 0;
+  counter++;
+  console.log('Hey Tasos the meetingId:', meetingId);
+  console.log('Hey Tasos number of times:', counter);
   // const imageUri = "https://epostersonline-2.s3-eu-west-1.amazonaws.com/epodemo2019/epodemo2019.0020002.Full.png";
 
   const modifier = {
@@ -131,7 +131,6 @@ export default function addSlide(meetingId, podId, presentationId, slide) {
         } else if (numberAffected) {
           Logger.info(`Upserted slide id=${slideId} pod=${podId} presentation=${presentationId}`);
         }
-
       } catch (err) {
         Logger.error(`Error on adding slide to collection: ${err}`);
       }

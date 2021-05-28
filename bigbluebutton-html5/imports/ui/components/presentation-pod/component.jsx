@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Poster from '../poster/component'
+import Poster from '../poster/component';
 
 
 class PresentationPods extends PureComponent {
@@ -12,9 +12,7 @@ class PresentationPods extends PureComponent {
     */
     return (
       // <PresentationAreaContainer podId="DEFAULT_PRESENTATION_POD" {...this.props} />
-      <Poster>
-    
-  </Poster>
+      <Poster />
     );
   }
 }
