@@ -52,7 +52,7 @@
   @include inputFocus(var(--color-blue-light));
 
   flex: 1;
-  background: #fff;
+  background: #F3F6F9;
   background-clip: padding-box;
   margin: 0;
   color: var(--color-text);
@@ -65,7 +65,7 @@
   min-height: 2.5rem;
   max-height: 10rem;
   border: 1px solid var(--color-gray-lighter);
-  box-shadow: 0 0 0 1px var(--color-gray-lighter);
+ /* box-shadow: 0 0 0 1px var(--color-gray-lighter);*/
 
   &:disabled,
   &[disabled] {

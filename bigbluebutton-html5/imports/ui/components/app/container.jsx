@@ -24,6 +24,7 @@ import { withModalMounter } from '../modal/service';
 
 import App from './component';
 import NavBarContainer from '../nav-bar/container';
+import PosterContainer from '../poster/container';
 import ActionsBarContainer from '../actions-bar/container';
 import MediaContainer from '../media/container';
 

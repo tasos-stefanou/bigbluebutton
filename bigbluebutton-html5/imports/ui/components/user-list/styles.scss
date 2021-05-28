@@ -9,8 +9,8 @@
 // TODO: would be better to have those variables scoped and not global
 :root {
   --unread-messages-bg: var(--color-danger);
-  --user-list-text: var(--color-gray);
-  --user-list-bg: var(--color-off-white);
+  --user-list-text: var(--color-blue-darker);
+  --user-list-bg: var(--color-participants-panel);
 
   --user-thumbnail-border: var(--color-gray-light);
   --user-thumbnail-text: var(--user-thumbnail-border);
@@ -26,8 +26,8 @@
   --user-icons-color: var(--color-gray-light);
   --user-icons-color-hover: var(--color-gray);
 
-  --list-item-bg-hover: #dce4ed;
-  --item-focus-border: var(--color-blue-lighter);
+  --list-item-bg-hover: var(--color-blue);
+  --item-focus-border: var(--color-blue);
 }
 
 /* classes for extending

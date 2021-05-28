@@ -9,6 +9,9 @@ import { SVG, PNG } from '/imports/utils/mimeTypes';
 import calculateSlideData from '/imports/api/slides/server/helpers';
 import addSlidePositions from './addSlidePositions';
 
+import Meetings from '/imports/api/meetings';
+// import Auth from '/imports/ui/services/auth';
+
 const loadSlidesFromHttpAlways = Meteor.settings.private.app.loadSlidesFromHttpAlways || false;
 
 const requestWhiteboardHistory = (meetingId, slideId) => {
@@ -78,6 +81,11 @@ export default function addSlide(meetingId, podId, presentationId, slide) {
   };
 
   const imageUri = slide.svgUri || slide.pngUri;
+  counter=0;
+  counter ++;
+  console.log("Hey Tasos the meetingId:", meetingId);
+  console.log("Hey Tasos number of times:", counter)
+  // const imageUri = "https://epostersonline-2.s3-eu-west-1.amazonaws.com/epodemo2019/epodemo2019.0020002.Full.png";
 
   const modifier = {
     $set: Object.assign(

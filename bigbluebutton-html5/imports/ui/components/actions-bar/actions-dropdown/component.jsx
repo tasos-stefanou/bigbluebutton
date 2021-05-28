@@ -138,29 +138,29 @@ class ActionsDropdown extends PureComponent {
           />
         )
         : null),
-      (!amIPresenter
-        ? (
-          <DropdownListItem
-            icon="presentation"
-            label={formatMessage(takePresenter)}
-            description={formatMessage(takePresenterDesc)}
-            key={this.takePresenterId}
-            onClick={() => handleTakePresenter()}
-          />
-        )
-        : null),
-      (amIPresenter
-        ? (
-          <DropdownListItem
-            data-test="uploadPresentation"
-            icon="presentation"
-            label={formatMessage(presentationLabel)}
-            description={formatMessage(presentationDesc)}
-            key={this.presentationItemId}
-            onClick={this.handlePresentationClick}
-          />
-        )
-        : null),
+      // (!amIPresenter
+      //   ? (
+      //     <DropdownListItem
+      //       icon="presentation"
+      //       label={formatMessage(takePresenter)}
+      //       description={formatMessage(takePresenterDesc)}
+      //       key={this.takePresenterId}
+      //       onClick={() => handleTakePresenter()}
+      //     />
+      //   )
+      //   : null),
+      // (amIPresenter
+      //   ? (
+      //     <DropdownListItem
+      //       data-test="uploadPresentation"
+      //       icon="presentation"
+      //       label={formatMessage(presentationLabel)}
+      //       description={formatMessage(presentationDesc)}
+      //       key={this.presentationItemId}
+      //       onClick={this.handlePresentationClick}
+      //     />
+      //   )
+      //   : null),
       (amIPresenter && allowExternalVideo
         ? (
           <DropdownListItem

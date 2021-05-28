@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import PresentationAreaContainer from '../presentation/container';
+import Poster from '../poster/component'
+
 
 class PresentationPods extends PureComponent {
   render() {
@@ -10,15 +11,18 @@ class PresentationPods extends PureComponent {
       PresentationAreaContainer should fill any empty box provided by us
     */
     return (
-      <PresentationAreaContainer podId="DEFAULT_PRESENTATION_POD" {...this.props} />
+      // <PresentationAreaContainer podId="DEFAULT_PRESENTATION_POD" {...this.props} />
+      <Poster>
+    
+  </Poster>
     );
   }
 }
 
 export default PresentationPods;
 
-PresentationPods.propTypes = {
-  presentationPodIds: PropTypes.arrayOf(PropTypes.shape({
-    podId: PropTypes.string.isRequired,
-  })).isRequired,
-};
+// PresentationPods.propTypes = {
+//   presentationPodIds: PropTypes.arrayOf(PropTypes.shape({
+//     podId: PropTypes.string.isRequired,
+//   })).isRequired,
+// };

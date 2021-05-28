@@ -5,6 +5,9 @@ import { Slides, SlidePositions } from '/imports/api/slides';
 import Users from '/imports/api/users';
 import Auth from '/imports/ui/services/auth';
 
+// TASOS CHECKPOINT
+
+
 const getCurrentPresentation = podId => Presentations.findOne({
   podId,
   current: true,
@@ -18,10 +21,11 @@ const downloadPresentationUri = (podId) => {
 
   const presentationFileName = `${currentPresentation.id}.${currentPresentation.name.split('.').pop()}`;
 
-  const uri = `https://${window.document.location.hostname}/bigbluebutton/presentation/download/`
-    + `${currentPresentation.meetingId}/${currentPresentation.id}`
-    + `?presFilename=${encodeURIComponent(presentationFileName)}`;
+  // const uri = `https://${window.document.location.hostname}/bigbluebutton/presentation/download/`
+  //   + `${currentPresentation.meetingId}/${currentPresentation.id}`
+  //   + `?presFilename=${encodeURIComponent(presentationFileName)}`;
 
+  const uri = "https://bbb1.epostersonline.com/bigbluebutton/presentation/d6b92a0f675e621bd4591e5535c66ae176ac8632-1621576490278/d6b92a0f675e621bd4591e5535c66ae176ac8632-1621576490278/50808bb5d2200ffa733b0922b047d877a276f60d-1621582186173/svg/1";
   return uri;
 };
 
