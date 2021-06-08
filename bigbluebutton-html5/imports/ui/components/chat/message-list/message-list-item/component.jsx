@@ -46,29 +46,23 @@ class MessageListItem extends Component {
       messages,
       user,
     } = this.props;
-
     const {
       scrollArea: nextScrollArea,
       messages: nextMessages,
       user: nextUser,
     } = nextProps;
-
     if (!scrollArea && nextScrollArea) return true;
-
     const hasNewMessage = messages.length !== nextMessages.length;
     const hasUserChanged = user && nextUser
       && (user.isModerator !== nextUser.isModerator || user.isOnline !== nextUser.isOnline);
-
     return hasNewMessage || hasUserChanged;
   }
-
   renderSystemMessage() {
     const {
       messages,
       chatAreaId,
       handleReadMessage,
     } = this.props;
-
     return (
       <div className={styles.messages}>
         {messages.map(message => (
@@ -87,7 +81,6 @@ class MessageListItem extends Component {
       </div>
     );
   }
-
   render() {
     const {
       user,
@@ -99,15 +92,11 @@ class MessageListItem extends Component {
       scrollArea,
       intl,
     } = this.props;
-
     const dateTime = new Date(time);
-
     const regEx = /<a[^>]+>/i;
-
     if (!user) {
       return this.renderSystemMessage();
     }
-
     return (
       <div className={styles.item}>
         <div className={styles.wrapper} ref={(ref) => { this.item = ref; }}>
@@ -132,32 +121,30 @@ class MessageListItem extends Component {
                     </span>
                   )}
               </div>
-              <time className={styles.time} dateTime={dateTime}>
-                <FormattedTime value={dateTime} />
-              </time>
-            </div>
-            <div className={styles.messages}>
-              {messages.map(message => (
-                <Message
-                  className={(regEx.test(message.text) ? styles.hyperlink : styles.message)}
-                  key={message.id}
-                  text={message.text}
-                  time={message.time}
-                  chatAreaId={chatAreaId}
-                  lastReadMessageTime={lastReadMessageTime}
-                  handleReadMessage={handleReadMessage}
-                  scrollArea={scrollArea}
-                />
-              ))}
             </div>
           </div>
         </div>
+        <div className={styles.messages}>
+          {messages.map(message => (
+            <Message
+              className={(regEx.test(message.text) ? styles.hyperlink : styles.message)}
+              key={message.id}
+              text={message.text}
+              time={message.time}
+              chatAreaId={chatAreaId}
+              lastReadMessageTime={lastReadMessageTime}
+              handleReadMessage={handleReadMessage}
+              scrollArea={scrollArea}
+            />
+          ))}
+        </div>
+        <time className={styles.time} dateTime={dateTime}>
+          <FormattedTime value={dateTime} />
+        </time>
       </div>
     );
   }
 }
-
 MessageListItem.propTypes = propTypes;
 MessageListItem.defaultProps = defaultProps;
-
 export default injectIntl(MessageListItem);

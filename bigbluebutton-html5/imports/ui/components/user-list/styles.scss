@@ -26,8 +26,10 @@
   --user-icons-color: var(--color-gray-light);
   --user-icons-color-hover: var(--color-gray);
 
-  --list-item-bg-hover: var(--color-blue);
-  --item-focus-border: var(--color-blue);
+  // --list-item-bg-hover: var(--color-blue);
+  --list-item-bg-hover: var(--color-chat-panel);
+  // --item-focus-border: var(--color-blue);
+  --item-focus-border: var(--color-chat-panel);
 }
 
 /* classes for extending
@@ -133,9 +135,9 @@
 }
 
 .smallTitle {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  text-transform: uppercase;
+  text-transform: none;
   padding: 0 var(--sm-padding-x);
   margin: 0 0 (var(--lg-padding-x) / 2) 0;
   color: var(--color-gray);
