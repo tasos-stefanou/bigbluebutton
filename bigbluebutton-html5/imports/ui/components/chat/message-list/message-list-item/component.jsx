@@ -57,6 +57,7 @@ class MessageListItem extends Component {
       && (user.isModerator !== nextUser.isModerator || user.isOnline !== nextUser.isOnline);
     return hasNewMessage || hasUserChanged;
   }
+
   renderSystemMessage() {
     const {
       messages,
@@ -81,6 +82,7 @@ class MessageListItem extends Component {
       </div>
     );
   }
+
   render() {
     const {
       user,
