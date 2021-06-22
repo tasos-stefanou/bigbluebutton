@@ -224,7 +224,7 @@ class SettingsDropdown extends PureComponent {
       : null;
 
     return _.compact([
-      this.getFullscreenItem(),
+      //this.getFullscreenItem(),
       (<DropdownListItem
         key="list-item-settings"
         icon="settings"
@@ -232,7 +232,7 @@ class SettingsDropdown extends PureComponent {
         description={intl.formatMessage(intlMessages.settingsDesc)}
         onClick={() => mountModal(<SettingsMenuContainer />)}
       />),
-      (<DropdownListItem
+      /*(<DropdownListItem
         key="list-item-about"
         icon="about"
         label={intl.formatMessage(intlMessages.aboutLabel)}
@@ -256,7 +256,7 @@ class SettingsDropdown extends PureComponent {
         label={intl.formatMessage(intlMessages.hotkeysLabel)}
         description={intl.formatMessage(intlMessages.hotkeysDesc)}
         onClick={() => mountModal(<ShortcutHelpComponent />)}
-      />),
+      />),*/
       (isMeteorConnected ? <DropdownListSeparator key={_.uniqueId('list-separator-')} /> : null),
       allowedToEndMeeting && isMeteorConnected
         ? (<DropdownListItem
@@ -289,12 +289,9 @@ class SettingsDropdown extends PureComponent {
       >
         <DropdownTrigger tabIndex={0} accessKey={OPEN_OPTIONS_AK}>
           <Button
-            label={intl.formatMessage(intlMessages.optionsLabel)}
-            icon="more"
-            ghost
-            circle
-            hideLabel
-            className={styles.btn}
+            label={intl.formatMessage(intlMessages.leaveSessionDesc)}
+            block
+            className={styles.btnScg}
 
             // FIXME: Without onClick react proptypes keep warning
             // even after the DropdownTrigger inject an onClick handler

@@ -119,5 +119,25 @@
   }
 }
 
-.btnSettings {
+.btnScg {
+  margin: 0;
+  background-color: firebrick;
+  color: white;
+  border-radius: 10px;
+
+  span {
+    border: none;
+    box-shadow: none;
+  }
+
+  &:hover,
+  &:focus {
+    
+      margin: 0;
+      background-color: firebrick;
+      color: white;
+      border-radius: 10px;
+      opacity: .75;
+    
+  }
 }

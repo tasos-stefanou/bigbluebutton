@@ -257,7 +257,7 @@
     "app.navBar.settingsDropdown.fullscreenDesc": "Make the settings menu fullscreen",
     "app.navBar.settingsDropdown.settingsDesc": "Change the general settings",
     "app.navBar.settingsDropdown.aboutDesc": "Show information about the client",
-    "app.navBar.settingsDropdown.leaveSessionDesc": "Leave the meeting",
+    "app.navBar.settingsDropdown.leaveSessionDesc": "Leave meeting",
     "app.navBar.settingsDropdown.exitFullscreenDesc": "Exit fullscreen mode",
     "app.navBar.settingsDropdown.hotkeysLabel": "Keyboard shortcuts",
     "app.navBar.settingsDropdown.hotkeysDesc": "Listing of available keyboard shortcuts",

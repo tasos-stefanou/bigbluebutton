@@ -2,8 +2,21 @@ import React from 'react';
 import Meetings from '/imports/api/meetings';
 import Auth from '/imports/ui/services/auth';
 import { styles } from './styles.scss';
+import {INITIAL_VALUE, ReactSVGPanZoom, TOOL_NONE, fitSelection, zoomOnViewerCenter, fitToViewer} from 'react-svg-pan-zoom';
+import {useRef, useState, useEffect} from 'react';
+import {ReactSvgPanZoomLoader} from 'react-svg-pan-zoom-loader'
+
 
 const Poster = () => {
+
+  const Viewer = useRef(null);
+  const [tool, setTool] = useState(TOOL_NONE)
+  const [value, setValue] = useState(INITIAL_VALUE)
+  
+  useEffect(() => {
+    Viewer.current.fitToViewer();
+  }, []);
+
   let meetingTitle;
   const meetingId = Auth.meetingID;
   const meetingObject = Meetings.findOne({
@@ -22,20 +35,34 @@ const Poster = () => {
     //   document.title = titleString;
   }
 
-  console.log('Poster meetingId:', meetingId);
-  console.log('Poster meetingObject:', meetingObject);
-  console.log('Poster meetingTitle:', meetingTitle);
-
-  const presentationTitleWithoutUID = meetingTitle.split('|')[0];
-  const posterUID = meetingTitle.split('|scigentech|')[meetingTitle.split('|scigentech|').length - 1] || 'epodemo2019.0020002';
+  
+  const s3BucketURL = 'https://svg-test.s3-eu-west-1.amazonaws.com';
+  //const presentationTitleWithoutUID = meetingTitle.split('|')[0];
+  const posterUID = meetingTitle.split('|scigentech|')[meetingTitle.split('|scigentech|').length - 1];
   const prefix = posterUID.split('.')[0];
-  console.log('Poster posterUID:', posterUID);
 
   return (
-    <div className={styles.zoomWithoutContainer}>
-      <img src={`https://epostersonline-2.s3-eu-west-1.amazonaws.com/${prefix}/${posterUID}.Full.png`} alt={presentationTitleWithoutUID} />
+    <div>
+
+    <ReactSvgPanZoomLoader src={`${s3BucketURL}/${prefix}/${posterUID}.NORMAL.svg`} render= {(content) => (
+      <ReactSVGPanZoom 
+      ref={Viewer}
+      width={1000} height={500}
+      tool={tool} onChangeTool={setTool}
+      value={value} onChangeValue={setValue}
+      onZoom={e => console.log('zoom')}
+      onPan={e => console.log('pan')}
+      onClick={event => console.log('click', event.x, event.y, event.originalEvent)}
+        >
+        <svg width={5250} height={2625}>
+            {content}
+        </svg>  
+     </ReactSVGPanZoom>
+    )}/>
+
     </div>
   );
+
 };
 
 export default Poster;
